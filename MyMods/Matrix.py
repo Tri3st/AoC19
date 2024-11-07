@@ -1,19 +1,15 @@
 """ Matrix Class = for use with matrixes or grids.
 use dimj -> dimensions rows
     dimi -> dimensions columns """
-
-
 class Matrix:
     """
        Matrix class. makes a matrix with dimi colums and dimj rows
     """
-
-    def __init__(self, dimj, dimi):
+    def __init__(self, dimj, dimi, char=0):
         self.dimj = dimj
         self.dimi = dimi
-        self.grid = [[0 for i in range(dimi)] for j in range(dimj)]
-        self.lowpoints = []
-        self.risklevel = 0
+        self.grid = [[char for i in range(dimi)] for j in range(dimj)]
+
 
     def __str__(self):
         """
