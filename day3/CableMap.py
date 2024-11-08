@@ -3,7 +3,7 @@ from AoC19.MyMods.Matrix import Matrix
 
 
 class CableMap(Matrix):
-    DIRECTION = {
+    DIRS = {
         'U': (-1, 0),
         'D': (1, 0),
         'R': (0, 1),
@@ -14,16 +14,7 @@ class CableMap(Matrix):
         self.start = (math.floor(dimj / 2), math.floor(dimi // 2))
         print(self.grid)
 
-    def do_data_lines(self, data_lines):
-        lines = data_lines.split("\n")
-        for index, line in enumerate(lines):
-            print(line)
             j, i = self.start
-            dirs = line.split(",")
-            for dr in dirs:
-                d = dr[0]
-                unts = int("".join(list(dr[1:])))
-                j, i = self.do_dirs(d, unts, j, i, index)
 
 
     def do_dirs(self, dr, unts, j, i, wire):
