@@ -1,6 +1,7 @@
 from MyMods.ReadDataFile import read_data
         
-datalines = read_data("day5/input_day5.txt")
+# datalines = read_data("day5/input_day5.txt")
+data = """1002,4,3,4,33"""
 
     
 def part1():
