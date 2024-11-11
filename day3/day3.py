@@ -1,5 +1,5 @@
 from MyMods.ReadDataFile import read_data
-from AoC19.day3.CableMap import CableMap
+from day3.CableMap import CableMap
 
 datalines = read_data("day3/input_day3.txt")
 

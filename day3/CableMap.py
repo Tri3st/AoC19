@@ -1,5 +1,5 @@
 import math
-from AoC19.MyMods.Matrix import Matrix
+from MyMods.Matrix import Matrix
 
 
 class CableMap(Matrix):
