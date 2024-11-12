@@ -1,6 +1,8 @@
 from MyMods.ReadDataFile import read_data
 from day3.CableMap import CableMap
 
+from AoC19.day3.CableMap2 import CableMap2
+
 datalines = read_data("day3/input_day3.txt")
 
 datal = "\n".join(datalines)
@@ -15,11 +17,9 @@ U7,R6,D4,L4"""
     
 def part1():
     # Your code for part 1 goes here
-    m = CableMap(35000, 35000)
-    m.process_data_lines(datal)
-    print(m)
-    print(m.crossings)
-    print(m.shortest_manhattan_distance())
+    m = CableMap2()
+    m.process(data)
+    print(m.get_smallest_manhattan())
 
     
         
