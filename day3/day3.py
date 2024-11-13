@@ -1,5 +1,5 @@
 from MyMods.ReadDataFile import read_data
-from day3.CableMap import CableMap
+from day3.CableMap2 import CableMap2
 
 from AoC19.day3.CableMap2 import CableMap2
 
@@ -25,4 +25,6 @@ def part1():
         
 def part2():
     # Your code for part 2 goes here
-    pass
+    m = CableMap2()
+    m.process(datal)
+    print(m.get_least_steps())

@@ -31,16 +31,40 @@ class CableMap2:
                 data2 = list(data)
                 dr = data[0]
                 unts = int("".join(data[1:]))
-                j, i = self._do_data(dr, unts, wire_nr, j, i)
-        self._find_crossings()
+                # j, i = self._do_data(dr, unts, wire_nr, j, i)
+                j, i = self._do_data2(dr, unts, wire_nr, j, i)
+        # self._find_crossings()
+        self._find_crossings2()
 
 
-    def _do_data(self, dr, unts, wire_nr, j, i):
-        for n in range(unts + 1):
+    def _do_data2(self, dr, unts, wire_nr, j, i):
+        for n in range(1, unts + 1):
             self.counter += 1
             newj = (j + (self.DIRS[dr][0]) * n)
             newi = (i + (self.DIRS[dr][1]) * n)
             self.wire[str(wire_nr)].append((newj, newi, self.counter))
+        return newj, newi
+
+
+    def _find_crossings2(self):
+        crossings = []
+        for i, j, d in self.wire['1']:
+            for (i2, j2, d2) in self.wire['2']:
+                if i == i2 and j == j2 and i != 0 and j != 0:
+                    self.crossings.append((i, j, d + d2))
+
+
+    def get_least_steps(self):
+        distances = [d for j,i,d in self.crossings]
+        print(distances)
+        return min(distances)
+
+
+    def _do_data(self, dr, unts, wire_nr, j, i):
+        for n in range(unts + 1):
+            newj = (j + (self.DIRS[dr][0]) * n)
+            newi = (i + (self.DIRS[dr][1]) * n)
+            self.wire[str(wire_nr)].append((newj, newi))
         return newj, newi
 
 
